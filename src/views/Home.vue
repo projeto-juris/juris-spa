@@ -35,6 +35,9 @@
         <FAQ id="FAQ" />
       </v-lazy>
     </v-main>
+    <v-lazy>
+      <Footer id="footer" />
+    </v-lazy>
   </div>
 </template>
 
@@ -42,12 +45,14 @@
 import About from "../components/About/About.vue"
 import Services from "../components/servicesComponent/Services.vue"
 import FAQ from "../components/FAQ/Faq.vue"
+import Footer from "../views/footer.vue"
 export default {
   name: "Home",
   components: {
     About,
     Services,
     FAQ,
+    Footer,
   },
   methods: {
     scrollIntoView(el) {

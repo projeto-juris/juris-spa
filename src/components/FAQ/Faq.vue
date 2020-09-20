@@ -1,17 +1,17 @@
 <template>
-  <v-container style="margin-top: 300px">
+  <v-container>
     <v-spacer />
-    <v-row>
+    <v-row style="height: 100vh; margin-top: 100px" align="center" justify="start">
       <v-col cols="8">
-        <v-row align="start" justify="start">
+        <v-row>
           <h1>PERGUNTAS FREQUENTES</h1>
         </v-row>
-        <v-row align="start" justify="start">
+        <v-row>
           <div class="vList">
-            <v-list>
+            <v-list color="transparent">
               <v-list-group no-action disabled>
                 <template v-slot:activator>
-                  <plus-circle-icon size="1.5x" class="icons"></plus-circle-icon>
+                  <plus-circle-icon size="1.5x" class="inactiveIcons"></plus-circle-icon>
                   <v-list-item-content>
                     <v-list-item-title>Eu posso personalizar minha agenda?</v-list-item-title>
                   </v-list-item-content>
@@ -19,7 +19,7 @@
               </v-list-group>
               <v-list-group no-action @click="changeIcon">
                 <template v-slot:activator>
-                  <plus-circle-icon v-show="!iconActive" size="1.5x" class="icons"></plus-circle-icon>
+                  <plus-circle-icon v-show="!iconActive" size="1.5x" class="inactiveIcons"></plus-circle-icon>
                   <minus-circle-icon v-show="iconActive" size="1.5x" class="activeIcon"></minus-circle-icon>
                   <v-list-item-content>
                     <v-list-item-title>Como Juris pode me ajudar em minha relação diária com os clientes?</v-list-item-title>
@@ -37,7 +37,7 @@
               </v-list-group>
               <v-list-group no-action disabled>
                 <template v-slot:activator>
-                  <plus-circle-icon size="1.5x" class="icons"></plus-circle-icon>
+                  <plus-circle-icon size="1.5x" class="inactiveIcons"></plus-circle-icon>
                   <v-list-item-content>
                     <v-list-item-title>Porque usar o Juris ?</v-list-item-title>
                   </v-list-item-content>
@@ -74,9 +74,9 @@ export default {
 </script>
 <style>
 .vList {
-  width: 100%;
+  width: 90%;
 }
-.icons {
+.inactiveIcons {
   border-radius: 20px;
   stroke-width: 1.5px;
   background-color: #03293b;
