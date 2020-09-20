@@ -1,13 +1,15 @@
 <template>
   <div>
-    <v-app-bar id="home" app color="transparent" :hide-on-scroll="true" flat>
-      <v-btn text large>Juris</v-btn>
+    <v-app-bar id="appBar" app color="transparent" style="position: absolute !important;" flat>
+      <a>
+        <v-img id="img" src="../assets/logoJuris.svg" />
+      </a>
       <v-spacer></v-spacer>
       <v-btn text small color="white">Sobre</v-btn>
       <v-btn text small color="white" @click="scrollIntoView('about')">Como usar</v-btn>
       <v-btn text small @click="scrollIntoView('services')" color="white">Serviços</v-btn>
       <v-btn text small @click="scrollIntoView('FAQ')" color="white">FAQ</v-btn>
-      <v-btn text small color="white">Contato</v-btn>
+      <v-btn text small color="white" @click="scrollIntoView('footer')">Contato</v-btn>
       <v-btn large color="primary">Login</v-btn>
     </v-app-bar>
     <v-main>
@@ -25,7 +27,7 @@
           </v-card>
         </v-container>
       </v-lazy>
-      <v-lazy>
+      <v-lazy style="margin-top: 64px;">
         <About id="about" />
       </v-lazy>
       <v-lazy>
@@ -75,5 +77,11 @@ export default {
 }
 .vContainer {
   height: 100vh;
+}
+#img {
+  max-width: 90px;
+}
+#app > div > main {
+  padding: 0 !important;
 }
 </style>
