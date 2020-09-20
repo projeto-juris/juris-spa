@@ -1,11 +1,9 @@
 <template>
-  <div>
-    <v-app id="app">
-      <v-main>
-        <router-view />
-      </v-main>
-    </v-app>
-  </div>
+  <v-app id="app">
+    <v-main>
+      <router-view />
+    </v-main>
+  </v-app>
 </template>
 <script>
 export default {};
@@ -18,6 +16,5 @@ export default {};
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
-  overflow: hidden;
 }
 </style>
