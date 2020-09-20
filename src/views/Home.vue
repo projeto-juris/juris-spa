@@ -3,7 +3,7 @@
     <v-app-bar id="home" app color="transparent" :hide-on-scroll="true" flat>
       <v-btn text large>Juris</v-btn>
       <v-spacer></v-spacer>
-      <v-btn text small color="white">
+      <v-btn text small @click="scrollIntoView('about')" color="white">
         Sobre
       </v-btn>
       <v-btn text small color="white">Como usar</v-btn>
@@ -28,19 +28,25 @@
         </v-container>
       </v-lazy>
       <v-lazy>
-        <v-container class="vContainer">
-          <div class="about">
-            <h1>This is an about page</h1>
-          </div>
-        </v-container>
+        <About id="about" />
       </v-lazy>
     </v-main>
   </div>
 </template>
 
 <script>
+import About from "../components/About/About.vue";
 export default {
   name: "Home",
+  components: {
+    About,
+  },
+  methods: {
+    scrollIntoView(el) {
+      var elmnt = document.getElementById(el);
+      elmnt.scrollIntoView({ behavior: "smooth" });
+    },
+  },
 };
 </script>
 <style>

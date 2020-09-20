@@ -17,4 +17,7 @@ export default {};
   background-repeat: no-repeat;
   height: 100vh;
 }
+* {
+  scroll-behavior: smooth;
+}
 </style>
