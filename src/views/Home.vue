@@ -3,11 +3,15 @@
     <v-app-bar id="home" app color="transparent" :hide-on-scroll="true" flat>
       <v-btn text large>Juris</v-btn>
       <v-spacer></v-spacer>
-      <v-btn text small @click="scrollIntoView('about')" color="white">
+      <v-btn text small color="white">
         Sobre
       </v-btn>
-      <v-btn text small color="white">Como usar</v-btn>
-      <v-btn text small color="white">Serviços</v-btn>
+      <v-btn text small color="white" @click="scrollIntoView('about')"
+        >Como usar</v-btn
+      >
+      <v-btn text small @click="scrollIntoView('services')" color="white"
+        >Serviços</v-btn
+      >
       <v-btn text small color="white">FAQ</v-btn>
       <v-btn text small color="white">Contato</v-btn>
       <v-btn large color="primary">Login</v-btn>
@@ -30,16 +34,21 @@
       <v-lazy>
         <About id="about" />
       </v-lazy>
+      <v-lazy>
+        <Services id="services" />
+      </v-lazy>
     </v-main>
   </div>
 </template>
 
 <script>
 import About from "../components/About/About.vue";
+import Services from "../components/servicesComponent/Services.vue";
 export default {
   name: "Home",
   components: {
     About,
+    Services,
   },
   methods: {
     scrollIntoView(el) {
